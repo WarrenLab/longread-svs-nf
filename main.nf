@@ -11,7 +11,7 @@ process minimap {
         path("mapped.bam")
 
     """
-    samtools fastq $subreadsBam
+    samtools fastq $subreadsBam \
         | minimap2 -t $task.cpus -ax map-pb ${params.reference} - \
         | samtools view -bh - \
         | samtools sort - \
