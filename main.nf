@@ -21,6 +21,8 @@ process minimap {
 }
 
 process sniffles {
+    publishDir "output"
+
     input:
         path("mapped.bam")
         path(reference)
