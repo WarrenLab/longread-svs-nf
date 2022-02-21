@@ -31,6 +31,7 @@ process sniffles {
         path("variants.vcf.gz")
 
     """
+    samtools index mapped.bam
     sniffles -t $task.cpus --reference $reference \
         -i mapped.bam -v variants.vcf.gz
     """
