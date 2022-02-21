@@ -26,11 +26,11 @@ process sniffles {
         path(reference)
 
     output:
-        path("variants.vcf")
+        path("variants.vcf.gz")
 
     """
     sniffles -t $task.cpus --reference $reference \
-        -m mapped.bam -v variants.vcf
+        -i mapped.bam -v variants.vcf.gz
     """
 }
 
